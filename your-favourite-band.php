@@ -20,14 +20,17 @@
     <div class="container">
 
       <header>
-        <h1 class="page-header">Lesson 01 Lab<small>&nbsp;&mdash;&nbsp;<?php echo $bandName ?></small></h1>
+        <h1 class="page-header">Lesson 01 Lab<small>&nbsp;&mdash;&nbsp;Dynamic Pages</small></h1>
       </header>
 
       <section>
         <!-- Step 3 - Fill in the placeholders -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title"><!-- Output PHP variable for Band Name (double check the data exists so the page doesn't throw an error) --></h3>
+            <h3 class="panel-title">
+            	<!-- Output PHP variable for Band Name (double check the data exists so the page doesn't throw an error) -->
+            	<?php echo $bandName ?>
+            </h3>
           </div>
 
           <div class="panel-body">
