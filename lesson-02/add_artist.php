@@ -21,6 +21,6 @@
 	$sth->execute();
 	
 	// close the DB connection
-	dbh = null;
+	$dbh = null;
 
 ?>
