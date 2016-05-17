@@ -26,7 +26,7 @@
 		$host = $url["Data Source"];
 		$dbname = $url["Database"];
 		$username = $url["User Id"];
-		$password = $url["aa83c352"];
+		$password = $url["Password"];
 		
 		echo 'Azure';
 	} else {
