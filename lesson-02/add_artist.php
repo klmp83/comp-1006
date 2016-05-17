@@ -1,7 +1,7 @@
 <?php
 
 	// get our connection script
-	require_once ( $_SERVER['DOCUMENT_ROOT'] . '/shared/connect.php' );
+	require_once ($_SERVER['DOCUMENT_ROOT'] . '/Lessons/lesson-02/shared/connect.php');
 	
 	// build the SQL statement
 	$sql = 'INSERT INTO artists (name, bio_link) VALUES (:name, :bio_link)';
