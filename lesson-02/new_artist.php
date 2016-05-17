@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php 
+if ( preg_match("/Azure/i", $_SERVER['HTTP_HOST'])) {
+	echo 'Azure';
+} else {
+	echo 'Not Azure';
+}
+?>
 <html>
   <head>
     <link crossorigin='anonymous' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' rel='stylesheet'>
