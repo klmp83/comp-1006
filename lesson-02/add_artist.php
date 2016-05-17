@@ -2,7 +2,7 @@
 
 	// get our connection script
 	if ( preg_match("/Azure/i", $_SERVER['HTTP_HOST'])) {
-		require_once ($_SERVER['DOCUMENT_ROOT'] . '/shared/connect.php');
+		require_once ($_SERVER['DOCUMENT_ROOT'] . '/lesson-02/shared/connect.php');
 	} else {
 		require_once ($_SERVER['DOCUMENT_ROOT'] . '/Lessons/lesson-02/shared/connect.php');
 	}
