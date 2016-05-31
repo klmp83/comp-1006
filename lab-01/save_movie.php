@@ -1,5 +1,5 @@
 <?php
-	/*
+	/* 
 		CREATE TABLE movies(
 			id				INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 			movieTitle  	VARCHAR(50) NOT NULL,

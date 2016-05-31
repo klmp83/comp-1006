@@ -17,7 +17,7 @@
 	$row_count = $sth->rowCount();
 	
 	// close the DB connection
-	$dbh = null;
+	$dbh = null; 
 	
 ?>
 <!DOCTYPE HTML>
