@@ -28,10 +28,10 @@
 		$username = $url["User Id"];
 		$password = $url["Password"];
 		
-		echo 'Azure';
-	} else {
+		//echo 'Azure';
+	}/* else {
 		echo 'things';
-	}
+	}*/
 
 	// connection to DB
 	try {

@@ -61,6 +61,10 @@
       	<?php else: ?>
       		<div class="alert alert-warning">No Movies information to display.</div>
       	<?php endif; ?>
+      	
+      	<div class="input-group">
+      		<a class="btn btn-primary" href="new_movie.php"><i class="fa fa-plus"></i>&nbsp;Regist New Movie</a>
+      	</div>
       </section>
     </div>
     

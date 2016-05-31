@@ -41,5 +41,8 @@
 	
 	// close the DB connection
 	$dbh = null;
-
+	
+	header('Location: movies.php');
+	exit();
 ?>
+<
