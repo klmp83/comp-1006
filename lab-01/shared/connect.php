@@ -1,6 +1,6 @@
 <?php
 	
-	// localhosht or Dreamhost
+	// localhosht or Dreamhost 
 	if( file_exists($_SERVER['DOCUMENT_ROOT'] . '/Lessons/lesson-02/shared/secret.php')) {
 		require_once ($_SERVER['DOCUMENT_ROOT'] . '/Lessons/lesson-02/shared/secret.php');
 

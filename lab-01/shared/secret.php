@@ -1,5 +1,5 @@
 <?php
-
+ 
 	$connection_details = [
 		"host" => "us-cdbr-azure-southcentral-e.cloudapp.net",
 		"username" => "bdd2a9f50ea66c",
