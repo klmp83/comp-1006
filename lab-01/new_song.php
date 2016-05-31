@@ -1,7 +1,14 @@
 <?php
 	// connect to DB
-	$dbh = new PDO("mysql:host=us-cdbr-azure-southcentral-e.cloudapp.net;dbname=acsm_855816b26cc82d2", "bdd2a9f50ea66c", "aa83c352");
-	$dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	//$dbh = new PDO("mysql:host=us-cdbr-azure-southcentral-e.cloudapp.net;dbname=acsm_855816b26cc82d2", "bdd2a9f50ea66c", "aa83c352");
+	//$dbh->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	
+	// get our connection script
+	if (preg_match("/Azure/i", $_SERVER['HTTP_HOST'])) {
+		require_once ($_SERVER['DOCUMENT_ROOT'] . '/lab-01/shared/connect.php');
+	} else {
+		require_once ($_SERVER['DOCUMENT_ROOT'] . '/Lessons/lab-01/shared/connect.php');
+	}
 	
 	// build the SQL
 	$sql = "SELECT id, name FROM artists";
