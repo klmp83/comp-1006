@@ -1,8 +1,8 @@
 <?php
 	
 	// localhosht or Dreamhost 
-	if( file_exists($_SERVER['DOCUMENT_ROOT'] . '/Lessons/lesson-02/shared/secret.php')) {
-		require_once ($_SERVER['DOCUMENT_ROOT'] . '/Lessons/lesson-02/shared/secret.php');
+	if( file_exists($_SERVER['DOCUMENT_ROOT'] . '/Lessons/lab-01/shared/secret.php')) {
+		require_once ($_SERVER['DOCUMENT_ROOT'] . '/Lessons/lab-01/shared/secret.php');
 
 		$host = $connection_details['host'];
 		$dbname = $connection_details['database'];

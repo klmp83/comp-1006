@@ -1,5 +1,7 @@
 <?php 
-echo dirname(__FILE__)
+echo dirname(__FILE__) . "<br />";
+echo $_SERVER['DOCUMENT_ROOT'] . "<br />";
+echo dirname("/etc/") . "<br />";
 ?>
 <!DOCTYPE HTML>
 <html lang="en">

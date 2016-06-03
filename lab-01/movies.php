@@ -5,6 +5,7 @@
 	} else {
 		require_once ($_SERVER['DOCUMENT_ROOT'] . '/Lessons/lab-01/shared/connect.php');
 	}
+	//require_once (dirname(__FILE__) . '/shared/connect.php');
 	
 	// build the SQL statement
 	$sql = "SELECT * FROM movies";

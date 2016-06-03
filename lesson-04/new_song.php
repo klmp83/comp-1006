@@ -16,6 +16,7 @@
 	// close the connection
 	$dbh = null;
 	
+	session_start();
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -27,7 +28,14 @@
   </head>
 
   <body>
-    <!-- This is a Bootstrap container. Get more info at http://getbootstrap.com/ -->
+    <div class="alert alert-info">
+	    <?php 
+	     if (isset($_SESSION["message"])) {
+	     	echo $_SESSION["message"];
+	     }
+	     session_unset();
+	    ?>
+    </div>
     <div class="container">
       <header>
       	<h1 class="page-header">Add New Song</h1>
@@ -48,7 +56,7 @@
       		</div>
       		<div class="form-group">
       			<label for="title">Song Title</label>
-      			<input type="text" name="title" id="title" class="form-control" placeholder="We're Going to be friends" required="required" />	
+      			<input type="text" name="title" id="title" class="form-control" placeholder="We're Going to be friends" maxlength="100" required="required" />	
       		</div>
       		
       		<div class="form-group">

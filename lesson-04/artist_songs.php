@@ -40,6 +40,8 @@
 	$songs = $songs_sth->fetchAll();
 	
 	$dbh = null;
+	
+	session_start();
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -52,6 +54,14 @@
 
   <body>
     <!-- This is a Bootstrap container. Get more info at http://getbootstrap.com/ -->
+	<div class="alert alert-info">
+	    <?php 
+	     if (isset($_SESSION["message"])) {
+	     	echo $_SESSION["message"];
+	     }
+	     session_unset();
+	    ?>
+	</div>
     <div class="container">
       <header>
       	<h1 class="page-header"><?= $artist['name'] ?></h1>
