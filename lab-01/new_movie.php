@@ -1,3 +1,6 @@
+<?php 
+echo dirname(__FILE__)
+?>
 <!DOCTYPE HTML>
 <html lang="en">
 
