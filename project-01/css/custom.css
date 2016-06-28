@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+.container .center {
+	text-align: center;
+}
+.navbar-custom {
+	background-color: #E84C3D;
+	border-color: #E29E98;
+}
+.navbar-custom .navbar-brand {
+	color: #FFFFFF;
+}
+.navbar-custom .navbar-nav>li>a {
+	color: #FFFFFF;
+}
+.navbar-custom .navbar-nav>li.active>a {
+	color: #FFFFFF;
+	background-color: #080808;
+}
+.navbar-custom .navbar-nav>li>a:hover {
+	color: #FFFFFF;
+	background-color: #5CB85C;
+}

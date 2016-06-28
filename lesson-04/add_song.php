@@ -9,7 +9,7 @@
 	$error_msg = "";
 	
 	// check that song title isn't empty
-	if (empty(S_POST["title"])) {
+	if (empty($_POST["title"])) {
 		$error_msg .= "You must enter a song title<br />";
 		$validation = false;
 	} else {
