@@ -21,7 +21,7 @@
     
     try {
     	if (function_exists("get_included_file_contents")) { // password_hash($password, PASSWORD_BCRYPT);
-    		echo "RESULT" . function_exists("password_verify") . "<br />";
+    		echo "RESULT" . function_exists("get_included_file_contents") . "<br />";
     	} else {
     		echo "NO FUNCTION <br />";
     		echo 'Current PHP version: ' . phpversion() . '.<br />';
