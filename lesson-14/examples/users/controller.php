@@ -37,16 +37,16 @@ echo "TEST";
     $user->email = $post['email'];
     $user->password = $post['password'];
     $user->confirm_password = $post['password'];
-
+echo "TESTXX";
     // when we save, we apply our assigned properties and write them to the DB
     // the passed attribute "false" forces validation to not occur a second time
     $user->save( false );
-
+echo "TESTYY";
     if ( $user->is_invalid() ) {
       // set fail messages
       $_SESSION['fail'][] = $user->errors->full_messages();
       $_SESSION['fail'][] = 'The user could not be created.';
-
+echo "TESTZZ"; 
       // redirect
       header( 'Location: index.php?action=create' );
       exit;
