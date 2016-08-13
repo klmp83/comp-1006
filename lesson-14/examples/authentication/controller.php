@@ -15,41 +15,8 @@
 
   /* PROCESSES */
   function authenticate ( $post ) {
-  	echo "AUTH <br />";
     $user = User::find( 'first', array( 'email' => $post['email'] ) );
-    echo "AUTHX <br />";
-    
-    try {
-    	if (function_exists("password_verify")) { // password_hash($password, PASSWORD_BCRYPT);
-    		echo "RESULT OK"  . "<br />";
-    	} else {
-    		echo "NO FUNCTION <br />";
-    		echo 'Current PHP version: ' . phpversion() . '.<br />';
-    	}
-    	if (function_exists("array_key_exists")) {
-    		echo "array_key_exists" . function_exists("array_key_exists") . "<br />";
-    	} else {
-    		echo "array_key_exists (none) <br />";
-    	}
-    	
-    	if (method_exists('User','find')) {
-    		echo "User find" . "<br />";
-    	} else {
-    		echo "User find (none) <br />";
-    	}
-    	
-    	if (method_exists('User','save')) {
-    		echo "User save" . "<br />";
-    	} else {
-    		echo "User save (none) <br />";
-    	}
-    } catch (Exception $e) {
-    	echo 'Caught exception: ',  $e->getMessage(), "\n";
-    }
-    
-    echo 'AUTHY <br />';
     if ( $user && password_verify( $post['password'], $user->password ) ) {
-      echo "AUTHZ <br />";
       $_SESSION['success'] = 'You have successfully logged in.';
       $_SESSION['authenticated'] = true;
       $_SESSION['email'] = $user->email;
