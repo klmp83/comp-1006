@@ -20,7 +20,7 @@
     echo "AUTHX";
     
     try {
-    echo password_verify($post['password'], $user->password);
+    echo function_exists("password_verify");
     } catch (Exception $e) {
     	echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
