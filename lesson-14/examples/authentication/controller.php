@@ -20,8 +20,8 @@
     echo "AUTHX <br />";
     
     try {
-    	if (function_exists("session_start")) { // password_hash($password, PASSWORD_BCRYPT);
-    		echo "RESULT" . function_exists("session_start") . "<br />";
+    	if (function_exists("password_verify")) { // password_hash($password, PASSWORD_BCRYPT);
+    		echo "RESULT OK"  . "<br />";
     	} else {
     		echo "NO FUNCTION <br />";
     		echo 'Current PHP version: ' . phpversion() . '.<br />';
