@@ -10,8 +10,7 @@
   /* VIEWS */
   // index
   function index () {
-    echo 'abcd';
-    //$categories = Category::all( array( 'order' => 'name' ) );
+    $categories = Category::all( array( 'order' => 'name' ) );
     //return get_included_file_contents( 'views/index.php', ['categories' => $categories] );
   }
 
