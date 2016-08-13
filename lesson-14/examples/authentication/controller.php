@@ -19,7 +19,11 @@
     $user = User::find( 'first', array( 'email' => $post['email'] ) );
     echo "AUTHX";
     
+    try {
     echo password_verify($post['password'], $user->password);
+    } catch (Exception $e) {
+    	echo 'Caught exception: ',  $e->getMessage(), "\n";
+    }
     
     echo 'AUTHY';
     if ( $user && password_verify( $post['password'], $user->password ) ) {
