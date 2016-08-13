@@ -26,14 +26,13 @@
     		echo "NO FUNCTION <br />";
     		echo 'Current PHP version: ' . phpversion() . '.<br />';
     	}
-    	echo "RESULT" . function_exists("password_verify") . "\n";
     } catch (Exception $e) {
     	echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
     
     echo 'AUTHY <br />';
     if ( $user && password_verify( $post['password'], $user->password ) ) {
-      echo "AUTHY";
+      echo "AUTHZ <br />";
       $_SESSION['success'] = 'You have successfully logged in.';
       $_SESSION['authenticated'] = true;
       $_SESSION['email'] = $user->email;
