@@ -24,6 +24,7 @@
     		echo "RESULT" . function_exists("password_hash") . "<br />";
     	} else {
     		echo "NO FUNCTION <br />";
+    		echo 'Current PHP version: ' . phpversion() . '.<br />';
     	}
     	echo "RESULT" . function_exists("password_verify") . "\n";
     } catch (Exception $e) {
