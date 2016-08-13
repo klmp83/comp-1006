@@ -20,6 +20,8 @@
     echo "AUTHX";
     
     echo password_verify('A', 'B');
+    
+    echo 'AUTHY';
     if ( $user && password_verify( $post['password'], $user->password ) ) {
       echo "AUTHY";
       $_SESSION['success'] = 'You have successfully logged in.';
