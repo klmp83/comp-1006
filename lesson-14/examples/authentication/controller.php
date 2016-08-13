@@ -20,7 +20,7 @@
     echo "AUTHX <br />";
     
     try {
-    	if (function_exists("password_verify")) { // password_hash($password, PASSWORD_BCRYPT);
+    	if (function_exists("get_included_file_contents")) { // password_hash($password, PASSWORD_BCRYPT);
     		echo "RESULT" . function_exists("password_verify") . "<br />";
     	} else {
     		echo "NO FUNCTION <br />";
