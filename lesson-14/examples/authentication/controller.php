@@ -20,8 +20,8 @@
     echo "AUTHX <br />";
     
     try {
-    	if (function_exists("password_verify")) {
-    		echo "RESULT" . function_exists("password_verify") . "<br />";
+    	if (function_exists("password_hash")) { // password_hash($password, PASSWORD_BCRYPT);
+    		echo "RESULT" . function_exists("password_hash") . "<br />";
     	} else {
     		echo "NO FUNCTION <br />";
     	}
