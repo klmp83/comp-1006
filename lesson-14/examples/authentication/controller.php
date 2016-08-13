@@ -15,17 +15,22 @@
 
   /* PROCESSES */
   function authenticate ( $post ) {
-  	echo "AUTH";
+  	echo "AUTH <br />";
     $user = User::find( 'first', array( 'email' => $post['email'] ) );
-    echo "AUTHX";
+    echo "AUTHX <br />";
     
     try {
+    	if (function_exists("password_verify")) {
+    		echo "RESULT" . function_exists("password_verify") . "<br />";
+    	} else {
+    		echo "NO FUNCTION <br />";
+    	}
     	echo "RESULT" . function_exists("password_verify") . "\n";
     } catch (Exception $e) {
     	echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
     
-    echo 'AUTHY';
+    echo 'AUTHY <br />';
     if ( $user && password_verify( $post['password'], $user->password ) ) {
       echo "AUTHY";
       $_SESSION['success'] = 'You have successfully logged in.';
