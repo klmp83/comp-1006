@@ -11,7 +11,7 @@
   // index
   function index () {
     $categories = Category::all( array( 'order' => 'name' ) );
-    //return get_included_file_contents( 'views/index.php', ['categories' => $categories] );
+    return get_included_file_contents( 'views/index.php', ['categories' => $categories] );
   }
 
 
