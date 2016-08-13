@@ -26,6 +26,18 @@
     		echo "NO FUNCTION <br />";
     		echo 'Current PHP version: ' . phpversion() . '.<br />';
     	}
+    	
+    	if (method_exists('User','find')) {
+    		echo "User find" . "<br />";
+    	} else {
+    		echo "User find (none) <br />";
+    	}
+    	
+    	if (method_exists('User','save')) {
+    		echo "User save" . "<br />";
+    	} else {
+    		echo "User save (none) <br />";
+    	}
     } catch (Exception $e) {
     	echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
