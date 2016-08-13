@@ -132,3 +132,7 @@
     exit;
   }
 
+
+  /* Authentication Block */
+  request_is_authenticated( $_REQUEST, ['index', 'show'] );
+
