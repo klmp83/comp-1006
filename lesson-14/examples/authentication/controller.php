@@ -26,6 +26,11 @@
     		echo "NO FUNCTION <br />";
     		echo 'Current PHP version: ' . phpversion() . '.<br />';
     	}
+    	if (function_exists("array_key_exists")) {
+    		echo "array_key_exists" . function_exists("array_key_exists") . "<br />";
+    	} else {
+    		echo "array_key_exists (none) <br />";
+    	}
     	
     	if (method_exists('User','find')) {
     		echo "User find" . "<br />";
