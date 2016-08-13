@@ -30,7 +30,7 @@
   function add ( $post ) {
     // create a new record
     $user = new User;
-
+echo "TEST";
     // assign the values
     $user->first_name = $post['first_name'];
     $user->last_name = $post['last_name'];
