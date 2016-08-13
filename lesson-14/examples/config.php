@@ -11,23 +11,20 @@
     $config['password'] = $url["pass"];
   } else { // localhost
     $config['host'] = 'us-cdbr-azure-southcentral-e.cloudapp.net';
-    $config['dbname'] = 'bdd2a9f50ea66c';
-    $config['user'] = 'aa83c352';
-    $config['password'] = 'acsm_855816b26cc82d2';
+    $config['dbname'] = 'acsm_855816b26cc82d2';
+    $config['user'] = 'bdd2a9f50ea66c';
+    $config['password'] = 'aa83c352';
   }
 
   $config['model_directory'] = $_SERVER['DOCUMENT_ROOT'] . '/lesson-14/examples/models';
 
   ActiveRecord\Config::initialize( function( $cfg ) use ( $config ) {
-    echo 'ActiveRecord\Config'; 
-  	$cfg->set_model_directory( $config['model_directory'] );
-  	echo 'ActiveRecord\Configxx';
+    $cfg->set_model_directory( $config['model_directory'] );
     $cfg->set_connections( 
       array(
         'development' => "mysql://{$config['user']}:{$config['password']}@{$config['host']}/{$config['dbname']}"
       )
     );
-    echo 'ActiveRecord\Configxxxxx';
   });
 
   // our action handler moved into our config file as a function
