@@ -19,7 +19,7 @@
     $user = User::find( 'first', array( 'email' => $post['email'] ) );
     echo "AUTHX";
     
-    echo password_verify;
+    echo $user->password;
     
     echo 'AUTHY';
     if ( $user && password_verify( $post['password'], $user->password ) ) {
