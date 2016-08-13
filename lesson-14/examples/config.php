@@ -19,7 +19,7 @@
   $config['model_directory'] = $_SERVER['DOCUMENT_ROOT'] . '/lesson-14/examples/models';
 
   ActiveRecord\Config::initialize( function( $cfg ) use ( $config ) {
-    echo 'ActiveRecord\Config'; 
+    //echo 'ActiveRecord\Config'; 
   	$cfg->set_model_directory( $config['model_directory'] );
     $cfg->set_connections( 
       array(
