@@ -19,13 +19,15 @@
   $config['model_directory'] = $_SERVER['DOCUMENT_ROOT'] . '/lesson-14/examples/models';
 
   ActiveRecord\Config::initialize( function( $cfg ) use ( $config ) {
-    //echo 'ActiveRecord\Config'; 
+    echo 'ActiveRecord\Config'; 
   	$cfg->set_model_directory( $config['model_directory'] );
+  	echo 'ActiveRecord\Configxx';
     $cfg->set_connections( 
       array(
         'development' => "mysql://{$config['user']}:{$config['password']}@{$config['host']}/{$config['dbname']}"
       )
     );
+    echo 'ActiveRecord\Configxxxxx';
   });
 
   // our action handler moved into our config file as a function
