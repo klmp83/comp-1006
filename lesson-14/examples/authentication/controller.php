@@ -15,7 +15,9 @@
 
   /* PROCESSES */
   function authenticate ( $post ) {
+  	echo "AUTH";
     $user = User::find( 'first', array( 'email' => $post['email'] ) );
+    echo "AUTHX";
     if ( $user && password_verify( $post['password'], $user->password ) ) {
       $_SESSION['success'] = 'You have successfully logged in.';
       $_SESSION['authenticated'] = true;
