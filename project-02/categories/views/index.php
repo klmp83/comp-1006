@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="page-header">Categories</h1>
   <?php if ( is_authenticated() ): ?>
-  <p><a href="?action=create"><i class="fa fa-plus">&nbsp;</i>Create Category</a></p>
+  <p><a href="index.php?action=create"><i class="fa fa-plus">&nbsp;</i>Create Category</a></p>
   <?php endif ?>
 
   <?php if ( isset( $categories ) ): ?>
@@ -21,9 +21,9 @@
         <?php foreach ( $categories as $category ): ?>
           <tr>
             <td><?= $category->name ?></td>
-            <td><a href="?action=show&id=<?= $category->id ?>"><i class="fa fa-eye"></i></a></td>
+            <td><a href="index.php?action=show&id=<?= $category->id ?>"><i class="fa fa-eye"></i></a></td>
             <?php if ( is_authenticated() ): ?>
-              <td><a href="?action=edit&id=<?= $category->id ?>"><i class="fa fa-pencil"></i></a></td>
+              <td><a href="index.php?action=edit&id=<?= $category->id ?>"><i class="fa fa-pencil"></i></a></td>
               <td>
                 <form action="controller.php" method="post">
                   <input type="hidden" name="action" value="delete">

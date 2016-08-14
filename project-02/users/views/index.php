@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="page-header">Users</h1>
-  <p><a href="?action=create"><i class="fa fa-plus">&nbsp;</i>Create User</a></p>
+  <p><a href="index.php?action=create"><i class="fa fa-plus">&nbsp;</i>Create User</a></p>
 
   <?php if ( isset( $users ) ): ?>
     <table class="table table-striped table-condensed table-hover">
@@ -9,7 +9,6 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
-          <th>Show</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -21,8 +20,7 @@
             <td><?= $user->first_name ?></td>
             <td><?= $user->last_name ?></td>
             <td><?= $user->email ?></td>
-            <td><a href="?action=show&id=<?= $user->id ?>"><i class="fa fa-eye"></i></a></td>
-            <td><a href="?action=edit&id=<?= $user->id ?>"><i class="fa fa-pencil"></i></a></td>
+            <td><a href="index.php?action=edit&id=<?= $user->id ?>"><i class="fa fa-pencil"></i></a></td>
             <td>
               <form action="controller.php" method="post">
                 <input type="hidden" name="action" value="delete">

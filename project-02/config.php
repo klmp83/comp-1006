@@ -10,14 +10,14 @@
     $config['user'] = $url["user"];
     $config['password'] = $url["pass"];
   } else { // localhost
-    $config['host'] = 'localhost';
+/*    $config['host'] = 'localhost';
     $config['dbname'] = 'comp-1006-lesson-examples';
     $config['user'] = 'root';
-    $config['password'] = 'dba007$';
-/*    $config['host'] = 'us-cdbr-azure-southcentral-e.cloudapp.net';
+    $config['password'] = 'dba007$';*/
+    $config['host'] = 'us-cdbr-azure-southcentral-e.cloudapp.net';
     $config['dbname'] = 'acsm_855816b26cc82d2';
     $config['user'] = 'bdd2a9f50ea66c';
-    $config['password'] = 'aa83c352';*/
+    $config['password'] = 'aa83c352';
   }
 
   $config['model_directory'] = __DIR__ . '/models';
@@ -62,7 +62,7 @@
   	if ( !isset($_SESSION['authenticated'])) {
   		if (!in_array($request['action'], $whitelist)) {
   			$_SESSION['fail'] = 'You are not authorized.';
-  			header('Location: ../categories/?action=index');
+  			header('Location: ../categories/index.php?action=index');
   			exit;
   		}
   	}
