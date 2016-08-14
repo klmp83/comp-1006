@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+	
+    RewriteEngine On
+
+	# Redirect Virtual Url to Real Resource
+    RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteRule ^ index.php [QSA,L]
+    
+	RewriteRule ^(.*)\.html$ $1.php [nc]
+    
+</IfModule>
