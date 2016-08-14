@@ -8,7 +8,8 @@
 	# Redirect Virtual Url to Real Resource
     #RewriteCond %{REQUEST_FILENAME} !-f
     #RewriteRule ^ index.php [QSA,L]
-    
+
+	Options +FollowSymlinks
 	RewriteRule ^(.*)\.html$ $1.php [nc]
     
 </IfModule>
