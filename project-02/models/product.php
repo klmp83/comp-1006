@@ -8,7 +8,7 @@
     static $before_save = array( 'upload' );
 
     // associations/relationships
-    static $belongs_to = array( 'category' );
+    static $belongs_to = array( 'genre' );
 
     /* Sanitizations */
     // setter
@@ -45,13 +45,13 @@
     );
 
     static $validates_uniqueness_of = array(
-      array( array( 'name', 'category_id' ), 'message' => 'exists for this category already.' )
+      array( array( 'name', 'genre_id' ), 'message' => 'exists for this genre already.' )
     );
 
     public function validate () {
-      // validate the presence of the category in the database
-      if ( Category::exists( $this->category_id ) === false ) {
-        $this->errors->add( 'category_id', "doesn't exist." );
+      // validate the presence of the genre in the database
+      if ( Genre::exists( $this->genre_id ) === false ) {
+        $this->errors->add( 'genre_id', "doesn't exist." );
       }
 
       // validate an image is being uploaded

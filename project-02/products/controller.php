@@ -10,8 +10,8 @@
   /* VIEWS */
   // create
   function create () {
-    $categories = Category::all();
-    return get_included_file_contents( 'views/create.php', ['categories' => $categories] );
+    $genres = Genre::all();
+    return get_included_file_contents( 'views/create.php', ['genres' => $genres] );
   }
 
 
@@ -19,13 +19,13 @@
   function edit ( $get ) {
     if ( !isset( $get['id'] ) || !Product::exists( $get['id'] ) ) {
       $_SESSION['fail'] = 'You must choose a product to edit.';
-      header( 'Location: ../categories/index.php?action=index' );
+      header( 'Location: ../genres/index.php?action=index' );
       exit;
     }
 
     $product = Product::find( $get['id'] );
-    $categories = Category::all();
-    return get_included_file_contents( 'views/edit.php', ['categories' => $categories, 'product' => $product] );
+    $genres = Genre::all();
+    return get_included_file_contents( 'views/edit.php', ['genres' => $genres, 'product' => $product] );
   }
 
 
@@ -38,10 +38,7 @@
     // assign the values
     $product->name = $post['name'];
     $product->price = $post['price'];
-    $product->category_id = $post['category_id'];
-
-    // process the image
-    $product->file = $_FILES['image'];
+    $product->genre_id = $post['genre_id'];
 
     // save the image
     $product->save();
@@ -57,7 +54,7 @@
 
     // redirect with a success if product was saved
     $_SESSION['success'] = 'Product was created successfully.';
-    header( 'Location: ../categories/index.php?action=show&id=' . $product->category->id );
+    header( 'Location: ../genres/index.php?action=show&id=' . $product->genre->id );
     exit;
   }
 
@@ -67,7 +64,7 @@
     // redirect if the id wasn't passed or the product does not exist
     if ( !isset( $post['id'] ) || !Product::exists( $post['id'] ) ) {
       $_SESSION['fail'] = 'You must choose a product to edit.';
-      header( 'Location: ../categories/index.php?action=index' );
+      header( 'Location: ../genres/index.php?action=index' );
       exit;
     }
 
@@ -77,11 +74,7 @@
     // assign the values to product
     $product->name = $post['name'];
     $product->price = $post['price'];
-    $product->category_id = $post['category_id'];
-
-    // process the image
-    if ( !empty( $post['current_image'] ) ) $product->image = $post['current_image'];
-    $product->file = $_FILES['image'];
+    $product->genre_id = $post['genre_id'];
 
     // save the product
     $product->save();
@@ -97,7 +90,7 @@
 
     // redirect with a success message
     $_SESSION['success'] = 'Product was updated successfully.';
-    header( 'Location: ../categories/index.php?action=show&id=' . $product->category->id );
+    header( 'Location: ../genres/index.php?action=show&id=' . $product->genre->id );
     exit;
   }
 
@@ -106,16 +99,16 @@
   function delete ( $post ) {
     if ( !isset( $post['id'] ) || !Product::exists( $post['id'] ) ) {
       $_SESSION['fail'] = 'You must choose a product to edit.';
-      header( 'Location: ../categories/index.php?action=index' );
+      header( 'Location: ../genres/index.php?action=index' );
       exit;
     }
 
     $product = Product::find( $post['id'] );
-    $category = $product->category;
+    $genre = $product->genre;
     $product->delete();
 
     $_SESSION['success'] = 'The product was deleted successfully.';
-    header( 'Location: ../categories/index.php?action=show&id=' . $category->id );
+    header( 'Location: ../genres/index.php?action=show&id=' . $genre->id );
   }
 
 

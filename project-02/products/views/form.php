@@ -14,19 +14,13 @@
     </div>
 
     <div class="form-group">
-      <label for="category_id">Category</label>
-      <select class="form-control" name="category_id" required>
-        <option value="">...select a category...</option>
-        <?php foreach ( $categories as $category ): ?>
-          <option value="<?= $category->id ?>" <?= isset( $product ) && $product->category->id == $category->id ? 'selected' : '' ?>><?= $category->name ?></option>
+      <label for="genre_id">Genre</label>
+      <select class="form-control" name="genre_id" required>
+        <option value="">...select a genre...</option>
+        <?php foreach ( $genres as $genre ): ?>
+          <option value="<?= $genre->id ?>" <?= isset( $product ) && $product->genre->id == $genre->id ? 'selected' : '' ?>><?= $genre->name ?></option>
         <?php endforeach ?>
       </select>
-    </div>
-
-    <div class="form-group">
-      <input type="hidden" name="MAX_FILE_SIZE" value="30000">
-      <label for="image">Upload Image</label>
-      <input type="file" name="image">
     </div>
 
     <div class="form-group">

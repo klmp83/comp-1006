@@ -38,6 +38,7 @@
     $user->email = $post['email'];
     $user->password = $post['password'];
     $user->confirm_password = $post['confirm_password'];
+    $user->role = $post['role'];
 
     // when we save, we apply our assigned properties and write them to the DB
     // the passed attribute "false" forces validation to not occur a second time
@@ -80,6 +81,9 @@
     	$user->password = $post['password'];
     	$user->confirm_password = $post['confirm_password'];
     }
+    
+    
+    $user->role = $post['role'];
     
     //save the user
     $user->save(false);

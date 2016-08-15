@@ -15,7 +15,8 @@
       array( 'first_name', 'message' => 'must be present.' ),
       array( 'last_name', 'message' => 'must be present.' ),
       array( 'email', 'message' => 'must be present.' ),
-      array( 'password', 'message' => 'must be present.', 'on' => array( 'create' ) )
+      array( 'password', 'message' => 'must be present.', 'on' => array( 'create' ) ),
+      array( 'role', 'message' => 'must be present.' )
     );
 
     static $validates_size_of = array(
@@ -24,6 +25,7 @@
       array( 'email', 'maximum' => 100, 'too_long' => 'is way too long.' ),
       array( 'password', 'maximum' => 100, 'too_long' => 'is way too long.', 'on' => array( 'create' ) ),
       array( 'password', 'minimum' => 8, 'too_short' => 'must be at least 8 characters.', 'on' => array( 'create' ) ),
+      array( 'role', 'maximum' => 1, 'too_long' => 'is way too long.' )
     );
 
     static $validates_uniqueness_of = array(

@@ -27,13 +27,13 @@
 	<div class="container-fluid">
 		<nav class="navbar navbar-inverse navbar-custom">
 			<div class="navbar-header">
-				<a href="/Lessons/project-02/categories/index.php?action=index" class="navbar-brand">Good Family</a>
+				<a href="/Lessons/project-02/genres/index.php?action=index" class="navbar-brand">My Books</a>
 			</div>
 			<div>
 			<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
 			<?php if ( is_authenticated()): ?>
-				<li><a href="/Lessons/project-02/categories/index.php?action=index">Categories</a></li>
-				<li><a href="/Lessons/project-02/categories/index.php?action=create">New Category</a></li>
+				<li><a href="/Lessons/project-02/genres/index.php?action=index">Genres</a></li>
+				<li><a href="/Lessons/project-02/genres/index.php?action=create">New Genre</a></li>
 				<li><a href="/Lessons/project-02/products/index.php?action=create">New Product</a></li>
 				<li><a href="/Lessons/project-02/users/index.php?action=index">Users</a></li>
 				<li><a href="/Lessons/project-02/authentication/index.php?action=logout"><i class="fa fa-sign-out">&nbsp;</i>Sign Out</a></li>

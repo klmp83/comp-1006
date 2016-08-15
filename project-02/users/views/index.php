@@ -9,6 +9,7 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
+          <th>Role</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -20,6 +21,7 @@
             <td><?= $user->first_name ?></td>
             <td><?= $user->last_name ?></td>
             <td><?= $user->email ?></td>
+            <td><?= $user->role == 1 ? 'General' : 'Admin' ?></td>
             <td><a href="index.php?action=edit&id=<?= $user->id ?>"><i class="fa fa-pencil"></i></a></td>
             <td>
               <form action="controller.php" method="post">

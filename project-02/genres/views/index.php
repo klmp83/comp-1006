@@ -1,10 +1,10 @@
 <div class="container">
-  <h1 class="page-header">Categories</h1>
+  <h1 class="page-header">Genres</h1>
   <?php if ( is_authenticated() ): ?>
-  <p><a href="index.php?action=create"><i class="fa fa-plus">&nbsp;</i>Create Category</a></p>
+  <p><a href="index.php?action=create"><i class="fa fa-plus">&nbsp;</i>Create Genre</a></p>
   <?php endif ?>
 
-  <?php if ( isset( $categories ) ): ?>
+  <?php if ( isset( $genres ) ): ?>
     <table class="table table-striped table-condensed table-hover">
       <thead>
         <tr>
@@ -18,17 +18,17 @@
       </thead>
 
       <tbody>
-        <?php foreach ( $categories as $category ): ?>
+        <?php foreach ( $genres as $genre ): ?>
           <tr>
-            <td><?= $category->name ?></td>
-            <td><a href="index.php?action=show&id=<?= $category->id ?>"><i class="fa fa-eye"></i></a></td>
+            <td><?= $genre->name ?></td>
+            <td><a href="index.php?action=show&id=<?= $genre->id ?>"><i class="fa fa-eye"></i></a></td>
             <?php if ( is_authenticated() ): ?>
-              <td><a href="index.php?action=edit&id=<?= $category->id ?>"><i class="fa fa-pencil"></i></a></td>
+              <td><a href="index.php?action=edit&id=<?= $genre->id ?>"><i class="fa fa-pencil"></i></a></td>
               <td>
                 <form action="controller.php" method="post">
                   <input type="hidden" name="action" value="delete">
-                  <input type="hidden" name="id" value="<?= $category->id ?>">
-                  <button type="submit" style="border: none; background: none; color: #337ab7; padding: 0; margin: 0;" onclick="return confirm('Are you sure you want to permanently delete <?= $category->name ?>')">
+                  <input type="hidden" name="id" value="<?= $genre->id ?>">
+                  <button type="submit" style="border: none; background: none; color: #337ab7; padding: 0; margin: 0;" onclick="return confirm('Are you sure you want to permanently delete <?= $genre->name ?>')">
                     <i class="fa fa-remove"></i>
                   </button>
                 </form>

@@ -10,22 +10,22 @@
   /* VIEWS */
   // index
   function index () {
-    $categories = Category::all( array( 'order' => 'name' ) );
-    return get_included_file_contents( 'views/index.php', ['categories' => $categories] );
+    $genres = Genre::all( array( 'order' => 'name' ) );
+    return get_included_file_contents( 'views/index.php', ['genres' => $genres] );
   }
 
 
   // show
   function show ( $get ) {
     // redirect user if here accidentally
-    if ( !isset( $get['id'] ) || !Category::exists( $get['id'] ) ) {
-      $_SESSION['fail'] = "You must select a category.";
+    if ( !isset( $get['id'] ) || !Genre::exists( $get['id'] ) ) {
+      $_SESSION['fail'] = "You must select a genre.";
       header( 'Location: index.php?action=index' );
       exit;
     }
 
-    $category = Category::find( $get['id'] );
-    return get_included_file_contents( 'views/show.php', ['category' => $category] );
+    $genre = Genre::find( $get['id'] );
+    return get_included_file_contents( 'views/show.php', ['genre' => $genre] );
   }
 
 
@@ -37,14 +37,14 @@
 
   // edit
   function edit ( $get ) {
-   if ( !isset( $get['id'] ) || !Category::exists( $get['id'] ) ) {
-      $_SESSION['fail'] = "You must select a category.";
+   if ( !isset( $get['id'] ) || !Genre::exists( $get['id'] ) ) {
+      $_SESSION['fail'] = "You must select a genre.";
       header( 'Location: index.php?action=index' );
       exit;
     }
 
-    $category = Category::find( 'first', $get['id'] );
-    return get_included_file_contents( 'views/edit.php', ['category' => $category] );
+    $genre = Genre::find( 'first', $get['id'] );
+    return get_included_file_contents( 'views/edit.php', ['genre' => $genre] );
   }
 
 
@@ -52,19 +52,19 @@
   // add
   function add ( $post ) {
     // create a new record
-    $category = new Category;
+    $genre = new Genre;
 
     // assign the values
-    $category->name = $post['name'];
+    $genre->name = $post['name'];
 
     // when we save, we apply our assigned properties and write them to the database
-    $category->save();
+    $genre->save();
 
     // redirect if there is an error
-    if ( $category->is_invalid() ) {
+    if ( $genre->is_invalid() ) {
       // set the fail messages
-      $_SESSION['fail'][] = $category->errors->full_messages();
-      $_SESSION['fail'][] = 'The category could not be created.';
+      $_SESSION['fail'][] = $genre->errors->full_messages();
+      $_SESSION['fail'][] = 'The genre could not be created.';
 
       // redirect
       header( 'Location: index.php?action=create' );
@@ -72,7 +72,7 @@
     }
 
     // set the success message
-    $_SESSION['success'] = 'Category was created successfully.';
+    $_SESSION['success'] = 'Genre was created successfully.';
     header( 'Location: index.php?action=index' );
     exit;
   }
@@ -81,34 +81,34 @@
   // update
   function update ( $post ) {
     // redirect user if here accidentally
-    if ( !isset( $post['id'] ) || !Category::exists( $post['id'] ) ) {
-      $_SESSION['fail'] = "You must select a category.";
+    if ( !isset( $post['id'] ) || !Genre::exists( $post['id'] ) ) {
+      $_SESSION['fail'] = "You must select a genre.";
       header( 'Location: index.php?action=index' );
       exit;
     }
 
     // get existing record
-    $category = Category::find( $post['id'] );
+    $genre = Genre::find( $post['id'] );
 
     // assign the values
-    $category->name = $post['name'];
+    $genre->name = $post['name'];
 
     // when we save, we apply our assigned properties and write them to the database
-    $category->save();
+    $genre->save();
 
     // redirect if there is an error
-    if ( $category->is_invalid() ) {
+    if ( $genre->is_invalid() ) {
       // set the fail messages
-      $_SESSION['fail'][] = $category->errors->full_messages();
-      $_SESSION['fail'][] = 'The category could not be updated.';
+      $_SESSION['fail'][] = $genre->errors->full_messages();
+      $_SESSION['fail'][] = 'The genre could not be updated.';
 
       // redirect
-      header( 'Location: index.php?action=edit&id=' . $category->id );
+      header( 'Location: index.php?action=edit&id=' . $genre->id );
       exit;
     }
 
     // set the success message
-    $_SESSION['success'] = 'Category was updated successfully.';
+    $_SESSION['success'] = 'Genre was updated successfully.';
     header( 'Location: index.php?action=index' );
     exit;
   }
@@ -117,17 +117,17 @@
   // delete
   function delete ( $post ) {
     // redirect user if here accidentally
-    if ( !isset( $post['id'] ) || !Category::exists( $post['id'] ) ) {
-      $_SESSION['fail'] = "You must select a category.";
+    if ( !isset( $post['id'] ) || !Genre::exists( $post['id'] ) ) {
+      $_SESSION['fail'] = "You must select a genre.";
       header( 'Location: index.php?action=index' );
       exit;
     }
 
     // delete the record
-    $category = Category::find( $post['id'] );
-    $category->delete();
+    $genre = Genre::find( $post['id'] );
+    $genre->delete();
 
-    $_SESSION['success'] = 'The category was deleted successfully.';
+    $_SESSION['success'] = 'The genre was deleted successfully.';
     header( 'Location: index.php?action=index' );
     exit;
   }

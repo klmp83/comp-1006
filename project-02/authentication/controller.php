@@ -16,7 +16,7 @@
   		$_SESSION['authenticated'] = true;
   		$_SESSION['email'] = $user->email;
   		$_SESSION['success'] = 'You have successfully logged in.';
-  		header( 'location: ../categories/index.php?action=index');
+  		header( 'location: ../genres/index.php?action=index');
   		exit;
   	} else {
   		$_SESSION['fail'] = 'You could not be logged in at this time.';

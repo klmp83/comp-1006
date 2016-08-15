@@ -1,10 +1,10 @@
 <div class="container">
-  <h1 class="page-header"><?= $category->name ?></h1>
+  <h1 class="page-header"><?= $genre->name ?></h1>
   <?php if ( is_authenticated() ): ?>
   <p><a href="../products/index.php?action=create"><i class="fa fa-plus">&nbsp;</i>Create Product</a></p>
   <?php endif ?>
 
-  <?php if ( $category->products ): ?>
+  <?php if ( $genre->products ): ?>
     <table class="table table-striped table-condensed table-hover">
       <thead>
         <tr>
@@ -18,7 +18,7 @@
       </thead>
 
       <tbody>
-        <?php foreach ( $category->products as $product ): ?>
+        <?php foreach ( $genre->products as $product ): ?>
           <tr>
             <td><?= $product->name ?></td>
             <td><?= $product->price_formatted ?></td>

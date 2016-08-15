@@ -24,8 +24,17 @@
     </div>
 
     <div class="form-group">
-      <label for="confirm_password">Confirm Password</label>
+      <label for="role">Confirm Password</label>
       <input class="form-control" type="password" name="confirm_password" <?= isset( $action ) && $action == 'update' ? '' : 'required' ?> maxlength="100" minlength="8">
+    </div>
+
+    <div class="form-group">
+      <label for="genre_id">Role</label>
+      <select class="form-control" name="role" required="required">
+          <option value="">...select a role...</option>
+          <option value="1" <?= isset( $user ) && $user->role == 1 ? 'selected' : '' ?>>General</option>
+          <option value="2" <?= isset( $user ) && $user->role == 2 ? 'selected' : '' ?>>Admin</option>
+      </select>
     </div>
 
     <div class="form-group">

@@ -1,6 +1,6 @@
 <?php
   
-  class Category extends ActiveRecord\Model {
+  class Genre extends ActiveRecord\Model {
 
     // associations/relationships
     static $has_many = array( 'products' );

@@ -1,4 +1,6 @@
 <?php
 
-  header( 'Location: categories/index.php?action=index' );
+  echo 'index.php common';
+
+  header( 'Location: genres/index.php?action=index' );
   exit;

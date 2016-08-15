@@ -62,7 +62,7 @@
   	if ( !isset($_SESSION['authenticated'])) {
   		if (!in_array($request['action'], $whitelist)) {
   			$_SESSION['fail'] = 'You are not authorized.';
-  			header('Location: ../categories/index.php?action=index');
+  			header('Location: ../genres/index.php?action=index');
   			exit;
   		}
   	}
@@ -74,11 +74,3 @@
   function is_authenticated () {
   	return isset($_SESSION['authenticated']) && !empty($_SESSION['email']);
   }
-
-
-
-
-
-
-
-
