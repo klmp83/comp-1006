@@ -9,8 +9,18 @@
     </div>
 
     <div class="form-group">
+      <label for="author_name">Author Name</label>
+      <input class="form-control" type="text" name="author_name" maxlength="100" required value="<?= isset( $book ) ? $book->author_name : '' ?>">
+    </div>
+
+    <div class="form-group">
       <label for="price">Price</label>
       <input class="form-control" type="text" name="price" min="0.01" step="any" required value="<?= isset( $book ) ? $book->price : '' ?>">
+    </div>
+
+    <div class="form-group">
+      <label for="pub_date">Publish Date</label>
+      <input class="form-control" type="date" name="pub_date" maxlength="100" required value="<?= isset( $book ) ? $book->pub_date : '' ?>">
     </div>
 
     <div class="form-group">

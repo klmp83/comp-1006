@@ -37,7 +37,9 @@
 
     // assign the values
     $book->name = $post['name'];
+    $book->author_name = $post['author_name'];
     $book->price = $post['price'];
+    $book->pub_date = $post['pub_date'];
     $book->genre_id = $post['genre_id'];
 
     // save the image
@@ -73,8 +75,11 @@
 
     // assign the values to book
     $book->name = $post['name'];
+    $book->author_name = $post['author_name'];
     $book->price = $post['price'];
+    $book->pub_date = $post['pub_date'];
     $book->genre_id = $post['genre_id'];
+    
 
     // save the book
     $book->save();
