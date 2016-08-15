@@ -1,11 +1,6 @@
 <?php
 
-  class Product extends ActiveRecord\Model {
-
-    public $file = [];
-
-    // callbacks
-    static $before_save = array( 'upload' );
+  class Book extends ActiveRecord\Model {
 
     // associations/relationships
     static $belongs_to = array( 'genre' );
@@ -53,40 +48,5 @@
       if ( Genre::exists( $this->genre_id ) === false ) {
         $this->errors->add( 'genre_id', "doesn't exist." );
       }
-
-      // validate an image is being uploaded
-      if ( !empty( $this->file['name'] ) && !empty( $this->image ) ) {
-        // validate type
-        if ( !preg_match( "/png|gif|jpg|jpeg/i", $this->file['type'] ) ) {
-          $this->errors->add( 'image', "is an invalid file." );
-        }
-
-        // validate size
-        if ( $this->file['size'] > 30000 ) {
-          $this->errors->add( 'image', "is too large. Please only upload images 30KB or less." );
-        }
-
-        // validate other errors
-        if ( $this->file['error'] !== 0 ) {
-          $this->errors->add( 'image', "has an error." );
-        }
-      }
     }
-
-    // callback functions
-    public function upload () {
-      if ( $this->is_valid() && !empty( $this->file['name'] ) ) {
-        // upload the image
-        $uploadfile = '../uploads/images/' . $this->file['name'];
-
-        if ( move_uploaded_file( $this->file['tmp_name'], $uploadfile ) ) {
-          // assign the name
-          $this->image = $this->file['name'];
-        } else {
-          // throw error
-          $this->errors->add( 'image', "could not be uploaded." );
-        }
-      }
-    }
-
   }

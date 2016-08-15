@@ -1,10 +1,10 @@
 <div class="container">
   <h1 class="page-header"><?= $genre->name ?></h1>
   <?php if ( is_authenticated() ): ?>
-  <p><a href="../products/index.php?action=create"><i class="fa fa-plus">&nbsp;</i>Create Product</a></p>
+  <p><a href="../books/index.php?action=create"><i class="fa fa-plus">&nbsp;</i>Create Book</a></p>
   <?php endif ?>
 
-  <?php if ( $genre->products ): ?>
+  <?php if ( $genre->books ): ?>
     <table class="table table-striped table-condensed table-hover">
       <thead>
         <tr>
@@ -18,17 +18,17 @@
       </thead>
 
       <tbody>
-        <?php foreach ( $genre->products as $product ): ?>
+        <?php foreach ( $genre->books as $book ): ?>
           <tr>
-            <td><?= $product->name ?></td>
-            <td><?= $product->price_formatted ?></td>
+            <td><?= $book->name ?></td>
+            <td><?= $book->price_formatted ?></td>
             <?php if ( is_authenticated() ): ?>
-            <td><a href="../products/index.php?action=edit&id=<?= $product->id ?>"><i class="fa fa-pencil"></i></a></td>
+            <td><a href="../books/index.php?action=edit&id=<?= $book->id ?>"><i class="fa fa-pencil"></i></a></td>
             <td>
-              <form action="../products/controller.php">
+              <form action="../books/controller.php">
                 <input type="hidden" name="action" value="delete">
-                <input type="hidden" name="id" value="<?= $product->id ?>">
-                <button type="submit" style="border: none; background: none; color: #337ab7; padding: 0; margin: 0;" onclick="return confirm('Are you sure you want to delete <?= $product->name ?>')"><i class="fa fa-remove"></i></button>
+                <input type="hidden" name="id" value="<?= $book->id ?>">
+                <button type="submit" style="border: none; background: none; color: #337ab7; padding: 0; margin: 0;" onclick="return confirm('Are you sure you want to delete <?= $book->name ?>')"><i class="fa fa-remove"></i></button>
               </form>
             </td>
             <?php endif ?>

@@ -3,7 +3,7 @@
   class Genre extends ActiveRecord\Model {
 
     // associations/relationships
-    static $has_many = array( 'products' );
+    static $has_many = array( 'books' );
 
     /* Sanitizations */
     // setter

@@ -34,7 +34,7 @@
 			<?php if ( is_authenticated()): ?>
 				<li><a href="/Lessons/project-02/genres/index.php?action=index">Genres</a></li>
 				<li><a href="/Lessons/project-02/genres/index.php?action=create">New Genre</a></li>
-				<li><a href="/Lessons/project-02/products/index.php?action=create">New Product</a></li>
+				<li><a href="/Lessons/project-02/books/index.php?action=create">New Book</a></li>
 				<li><a href="/Lessons/project-02/users/index.php?action=index">Users</a></li>
 				<li><a href="/Lessons/project-02/authentication/index.php?action=logout"><i class="fa fa-sign-out">&nbsp;</i>Sign Out</a></li>
 			<?php else: ?>
