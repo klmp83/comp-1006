@@ -37,8 +37,8 @@
       return '$' . number_format( $this->read_attribute( 'price' ), 2, '.', ',' ); // $1,222.56
     }
 
-    public function get_pub_date () {
-    	return htmlentities( $this->read_attribute( 'pub_date' ) );
+    public function get_pub_date_formatted () {
+    	return $this->read_attribute( 'pub_date' )->format('Y-m-d');
     }
 
     /* Validations */

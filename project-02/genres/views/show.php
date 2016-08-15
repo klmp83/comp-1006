@@ -9,7 +9,9 @@
       <thead>
         <tr>
           <th>Name</th>
+          <th>Author Name</th>
           <th>Price</th>
+          <th>Publish Date</th>
           <?php if ( is_authenticated() ): ?>
           <th>Edit</th>
           <th>Delete</th>
@@ -21,7 +23,9 @@
         <?php foreach ( $genre->books as $book ): ?>
           <tr>
             <td><?= $book->name ?></td>
+            <td><?= $book->author_name ?></td>
             <td><?= $book->price_formatted ?></td>
+            <td><?= $book->pub_date_formatted ?>
             <?php if ( is_authenticated() ): ?>
             <td><a href="../books/index.php?action=edit&id=<?= $book->id ?>"><i class="fa fa-pencil"></i></a></td>
             <td>
