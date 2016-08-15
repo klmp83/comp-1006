@@ -10,6 +10,9 @@
   unset( $_SESSION['success'] );
   unset( $_SESSION['fail'] );
 
+  $whatINeed = explode('/', $_SERVER['REQUEST_URI']);
+  $whatINeed = $whatINeed[1];
+  echo $whatINeed;
 ?>
 
 <!DOCTYPE HTML>
