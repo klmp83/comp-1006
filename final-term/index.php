@@ -33,7 +33,7 @@ O	(10 pts)  The user's net income is correctly calculated
 O	(5 pts)    A properly setup HTML page is used to output the user's information (use may use the GitHub template)
 O	(20 pts)  The returned user information is either an object or associative array
 O	(20 pts)  The data is legible and in a styled organized layout
-	(10 pts)  You've submitted a working URL and the file -> Top of class file
+O	(10 pts)  You've submitted a working URL and the file -> Top of class file
 	*/
 ?>
 <!DOCTYPE HTML>
