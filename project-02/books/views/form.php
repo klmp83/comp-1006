@@ -15,7 +15,7 @@
 
     <div class="form-group">
       <label for="price">Price</label>
-      <input class="form-control" type="text" name="price" min="0.01" step="any" required value="<?= isset( $book ) ? $book->price : '' ?>">
+      <input class="form-control" type="number" name="price" min="0.01" step="any" required value="<?= isset( $book ) ? $book->price : '' ?>">
     </div>
 
     <div class="form-group">
