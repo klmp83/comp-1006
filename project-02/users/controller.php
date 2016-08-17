@@ -99,6 +99,10 @@
     	exit;
     }
     
+    // refresh session
+    $_SESSION['role'] = $user->role;
+    $_SESSION['email'] = $user->email;
+    
     // set the success message and redirect
     $_SESSION['success'] = 'User was updated successfully.';
     header('Location: index.php?action=index');
