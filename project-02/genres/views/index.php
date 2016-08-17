@@ -10,7 +10,7 @@
         <tr>
           <th>Name</th>
           <th>Show</th>
-          <?php if ( is_admin() ): ?>
+          <?php if ( is_authenticated() ): ?>
             <th>Edit</th>
             <th>Delete</th>
           <?php endif ?>
@@ -22,7 +22,7 @@
           <tr>
             <td><?= $genre->name ?></td>
             <td><a href="index.php?action=show&id=<?= $genre->id ?>"><i class="fa fa-eye"></i></a></td>
-            <?php if ( is_admin() ): ?>
+            <?php if ( is_authenticated() ): ?>
               <td><a href="index.php?action=edit&id=<?= $genre->id ?>"><i class="fa fa-pencil"></i></a></td>
               <td>
                 <form action="controller.php" method="post">
