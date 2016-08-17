@@ -45,7 +45,8 @@
     static $validates_presence_of = array(
       array( 'name', 'message' => 'must be present.' ),
       array( 'author_name', 'message' => 'must be present.' ),
-      array( 'price', 'message' => 'must be present.' )
+      array( 'price', 'message' => 'must be present.' ),
+      array( 'pub_date', 'message' => 'must be present.' )
     );
 
     static $validates_size_of = array(
