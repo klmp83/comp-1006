@@ -3,6 +3,7 @@
   <p><a href="index.php?action=create"><i class="fa fa-plus">&nbsp;</i>Create User</a></p>
 
   <?php if ( isset( $users ) ): ?>
+    <?php if ( is_admin() ): ?>
     <table class="table table-striped table-condensed table-hover">
       <thead>
         <tr>
@@ -10,10 +11,8 @@
           <th>Last Name</th>
           <th>Email</th>
           <th>Role</th>
-          <?php if ( is_admin() ): ?>
           <th>Edit</th>
           <th>Delete</th>
-          <?php endif; ?>
         </tr>
       </thead>
 
@@ -24,7 +23,6 @@
             <td><?= $user->last_name ?></td>
             <td><?= $user->email ?></td>
             <td><?= $user->role == 1 ? 'General' : 'Admin' ?></td>
-            <?php if ( is_admin() ): ?>
             <td><a href="index.php?action=edit&id=<?= $user->id ?>"><i class="fa fa-pencil"></i></a></td>
             <td>
               <form action="controller.php" method="post">
@@ -35,10 +33,10 @@
                 </button>
               </form>
             </td>
-            <?php endif; ?>
           </tr>
         <?php endforeach ?>
       </tbody>
     </table>
+    <?php endif; ?>
   <?php endif ?>
 </div>
