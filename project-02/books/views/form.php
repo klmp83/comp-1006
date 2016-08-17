@@ -37,7 +37,6 @@
       <input type="hidden" name="action" value="<?= isset( $action ) ? $action : 'add' ?>">
 
       <?php if ( isset( $action ) && $action == 'update' ): ?>
-        <input type="hidden" name="current_image" value="<?= isset( $book->image ) ? $book->image : '' ?>">
         <input type="hidden" name="id" value="<?= $book->id ?>">
         <button type="submit" class="btn btn-danger"><i class="fa fa-pencil">&nbsp;</i>Update Book</button>
       <?php else: ?>
