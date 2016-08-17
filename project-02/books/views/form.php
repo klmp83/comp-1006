@@ -1,4 +1,4 @@
-<form action="controller.php" method="post" enctype="multipart/form-data">
+<form action="controller.php" method="post">
   
   <fieldset>
     <legend>Book Information</legend>

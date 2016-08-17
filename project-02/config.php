@@ -74,3 +74,9 @@
   function is_authenticated () {
   	return isset($_SESSION['authenticated']) && !empty($_SESSION['email']);
   }
+  
+  // check role
+  function is_admin () {
+  	return is_authenticated() && $_SESSION['role'] == 2;
+  }
+  

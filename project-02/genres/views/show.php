@@ -12,7 +12,7 @@
           <th>Author Name</th>
           <th>Price</th>
           <th>Publish Date</th>
-          <?php if ( is_authenticated() ): ?>
+          <?php if ( is_admin() ): ?>
           <th>Edit</th>
           <th>Delete</th>
           <?php endif ?>
@@ -26,7 +26,7 @@
             <td><?= $book->author_name ?></td>
             <td><?= $book->price_formatted ?></td>
             <td><?= $book->pub_date_formatted ?>
-            <?php if ( is_authenticated() ): ?>
+            <?php if ( is_admin() ): ?>
             <td><a href="../books/index.php?action=edit&id=<?= $book->id ?>"><i class="fa fa-pencil"></i></a></td>
             <td>
               <form action="../books/controller.php">

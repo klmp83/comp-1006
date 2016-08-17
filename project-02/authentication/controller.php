@@ -14,6 +14,7 @@
   	$user = User::find('first', ['email' => $post['email']]);
   	if ($user && password_verify($post['password'], $user->password)) {
   		$_SESSION['authenticated'] = true;
+  		$_SESSION['role'] = $user->role;
   		$_SESSION['email'] = $user->email;
   		$_SESSION['success'] = 'You have successfully logged in.';
   		header( 'location: ../genres/index.php?action=index');
@@ -29,6 +30,7 @@
   	if ( isset($_SESSION['authenticated'])) {
   		unset($_SESSION['authenticated']);
   		unset($_SESSION['email']);
+  		unset($_SESSION['role']);
   		$_SESSION['success'] = 'You have been successfully logged out.';
   		header( 'location: index.php?action=login');
   		exit;
