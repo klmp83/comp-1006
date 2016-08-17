@@ -99,9 +99,11 @@
     	exit;
     }
     
-    // refresh session
-    $_SESSION['role'] = $user->role;
-    $_SESSION['email'] = $user->email;
+    // refresh session (when login user and updated user are same user)
+    if ($user->id == $_SESSION['id']) {
+    	$_SESSION['role'] = $user->role;
+    	$_SESSION['email'] = $user->email;
+    }
     
     // set the success message and redirect
     $_SESSION['success'] = 'User was updated successfully.';
