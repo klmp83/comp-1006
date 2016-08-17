@@ -12,7 +12,7 @@
 
   $contextPath = explode('/', $_SERVER['REQUEST_URI']);
   $contextPath = $contextPath[1];
-  $contextPath = $contextPath == "Lessons" ? "/Lessons" : ""
+  $contextPath = $contextPath == "Lessons" ? "/Lessons" : ""; // check local environment & remote environment
 ?>
 
 <!DOCTYPE HTML>
